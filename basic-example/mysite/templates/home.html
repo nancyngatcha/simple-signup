@@ -1,5 +1,163 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Welcome, {{ user.username }}!</h2>
+  <h2>Bienvenue, {{ user.username }}!</h2>
+  <body>
+      <p>Oublie pas de faire ton test juste avant à ce lien : <a href="https://www.16personalities.com/fr/types-de-personnalite" >16 personnalités</a></p>
+    <h3> Rentre tes résultats ici !</h3>
+    <p> &emsp;&emsp;   
+      <progress id="avancement" value="50" max="100"></progress>
+      <span id="pourcentage"></span>
+      <input type="button" onclick="modif(-2);" value="-">
+      <input type="button" onclick="modif(2);" value="+">
+      <br> Extraverti &emsp; &emsp; &emsp; Introverti
+      
+    </p>
+    <!-- C'est la deuxième valeur -->
+<!-- qui sera initialement sélectionnée -->
+<select id="monselect">
+  <option value="valeur1">Valeur 1</option> 
+  <option value="valeur2" selected>Valeur 2</option>
+  <option value="valeur3">Valeur 3</option>
+</select>
+    <p>&emsp;&emsp;  
+        <progress id="avancement2" value="50" max="100"></progress>
+        <span id="pourcentage2"></span>
+        <input type="button"  onclick="modif2(-2);" value="-">
+        <input type="button"  onclick="modif2(2);" value="+">
+        <br> Intuitif &emsp; &emsp; &emsp; Observateur
+    </p>
+    <p>&emsp;&emsp;  
+        <progress id="avancement3" value="50" max="100"></progress>
+        <span id="pourcentage3"></span>
+        <input type="button"  onclick="modif3(-2);" value="-">
+        <input type="button"  onclick="modif3(2);" value="+">
+        <br> En Pensant &emsp; &emsp; &emsp; Sentiment
+    </p>
+    <p>&emsp;&emsp;  
+        <progress id="avancement4" value="50" max="100"></progress>
+        <span id="pourcentage4"></span>
+        <input type="button"  onclick="modif4(-2);" value="-">
+        <input type="button"  onclick="modif4(2);" value="+">
+        <br> Juger &emsp; &emsp; &emsp; Prospection
+    </p>
+    <p>&emsp;&emsp;  
+        <progress id="avancement5" value="50" max="100"></progress>
+        <span id="pourcentage5"></span>
+        <input type="button"  onclick="modif5(-2);" value="-">
+        <input type="button"  onclick="modif5(2);" value="+">
+        <br> Assertif &emsp; &emsp; &emsp; Turbulent
+    </p>
+    <h3>Test des personnalité</h3>
+    <div>
+        <h4>Les Analystes</h4>
+      <button class="bouton"><img src="https://i0.wp.com/www.radio1.pf/cms/wp-content/uploads/2015/04/23.04.Elon_.musk_.Tesla_.SpaceX.PASCAL-LE-SEGRETAIN.GETTY-IMAGES-NORTH-AMERICA.AFP_.1280.640.jpg?fit=1280%2C640&ssl=1"><p>Architecte : INTJ-A /INTJ-T</p></button>
+      <button class="bouton"><img src="https://img-0.journaldunet.com/Z7DOHlCNzV81VyksnRHAfEDzXWo=/1280x/smart/ecb94915aba54c8883649349b4df7340/ccmcms-jdn/1734742.jpg"><p>Logicien : INTP-A /INTP-T</p></button>
+      <button class="bouton"><img src="https://cdn.profoto.com/cdn/053149e/contentassets/d39349344d004f9b8963df1551f24bf4/profoto-albert-watson-steve-jobs-pinned-image-original.jpg?width=1280&quality=75&format=jpg"><p>Commandant : ENTJ-A /ENTJ-T</p></button>
+      <button class="bouton"><img src="https://static.hitek.fr/img/actualite/i_hanks.jpg"><p>Innovateur : ENTP-A /ENTP-T</p></button>
+      <h4>Les Diplomates</h4>
+      <button class="bouton"><img src="https://img.bfmtv.com/c/1256/708/bfm/577714.jpg"><p>Avocat : INFJ-A /INFJ-T</p></button>
+      <button class="bouton"><img src="https://storage.canalblog.com/50/61/1344545/110339067.jpg"><p>Médiateur : INFP-A /INFP-T</p></button>
+      <button class="bouton"><img src="https://www.pressafrik.com/photo/art/grande/9403795-15063003.jpg?v=1462113148"><p>Protagoniste : ENFJ-A /ENFJ-T</p></button>
+      <button class="bouton"><img src="https://fr.web.img3.acsta.net/pictures/20/01/16/09/48/3201727.jpg"><p>Inspirateur : ENFP-A /ENFP-T</p></button>
+      <h4>Les Sentinelles</h4>
+      <button class="bouton"><img src="https://www.r1.mu/images/news/4144f2b3c660e5a2019854a5c2d01a7a.jpg"><p>Logisticien : ISTJ-A /ISTJ-T</p></button>
+      <button class="bouton"><img src="https://chretienslifestyle.com/wp-content/uploads/2016/04/vin-diesel.jpg"><p>Défenseur : ISFJ-A /ISFJ-T</p></button>
+      <button class="bouton"><img src="http://referentiel.nouvelobs.com/file/132/702132.jpg"><p>Directeur : ESTJ-A /ESTJ-T</p></button>
+      <button class="bouton"><img src="http://www.chartsinfrance.net/style/breves/8/photo_1423743439.png"><p>Consul : ESFJ-A /ESFJ-T</p></button>
+      <h4>Les Explorateurs</h4>
+      <button class="bouton"><img src="https://file1.closermag.fr/var/closermag/storage/images/media/images/closer-v1/clint-eastwood2/834741-1-fre-FR/Clint-Eastwood.jpg?alias=width400&size=x100&format=jpeg"><p>Virtuose : ISTP-A /ISTP-T</p></button>
+      <button class="bouton"><img src="https://www.eklecty-city.fr/wp-content/uploads/2018/06/michael-jackson.jpg"><p>Aventurier : ISFP-A /ISFP-T</p></button>
+      <button class="bouton"><img src="https://gal.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fgal.2Fvar.2Fgal.2Fstorage.2Fimages.2Fmedia.2Fimages.2Factu.2Fphotos_on_ne_parle_que_de_ca.2Feddie_murphy.2F645962-1-fre-FR.2Feddie_murphy.2Ejpg/480x480/quality/80/eddie-murphy-arrete-le-cinema.jpg"><p>Entrepreneur : ESTP-A /ESTP-T</p></button>
+      <button class="bouton"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Marilyn_Monroe%2C_Photoplay_1953.jpg"><p>Amuseur : ESFP-A /ESFP-T</p></button>
+    </div>
+</body>
+  <script>
+    function avancement() {
+      var ava = document.getElementById("avancement");
+      var prc = document.getElementById("pourcentage");
+      prc.innerHTML = ava.value + "%";
+    }
+    avancement(); //Initialisation
+    
+    function avancement2() {
+      var ava = document.getElementById("avancement2");
+      var prc = document.getElementById("pourcentage2");
+      prc.innerHTML = ava.value + "%";
+    }
+    avancement2(); //Initialisation
+
+    function avancement3() {
+      var ava = document.getElementById("avancement3");
+      var prc = document.getElementById("pourcentage3");
+      prc.innerHTML = ava.value + "%";
+    }
+    avancement3(); //Initialisation
+
+    function avancement4() {
+      var ava = document.getElementById("avancement4");
+      var prc = document.getElementById("pourcentage4");
+      prc.innerHTML = ava.value + "%";
+    }
+    avancement4(); //Initialisation
+
+    function avancement5() {
+      var ava = document.getElementById("avancement5");
+      var prc = document.getElementById("pourcentage5");
+      prc.innerHTML = ava.value + "%";
+    }
+    avancement5(); //Initialisation
+
+    function modif(val) {
+    var ava = document.getElementById("avancement");
+      if((ava.value+val)<=ava.max && (ava.value+val)>0) {
+     ava.value += val;
+      }
+      avancement();
+}
+function modif2(val) {
+    var ava = document.getElementById("avancement2");
+      if((ava.value+val)<=ava.max && (ava.value+val)>0) {
+     ava.value += val;
+      }
+      avancement2();
+}
+function modif3(val) {
+    var ava = document.getElementById("avancement3");
+      if((ava.value+val)<=ava.max && (ava.value+val)>0) {
+     ava.value += val;
+      }
+      avancement3();
+}
+function modif4(val) {
+    var ava = document.getElementById("avancement4");
+      if((ava.value+val)<=ava.max && (ava.value+val)>0) {
+     ava.value += val;
+      }
+      avancement4();
+}
+function modif5(val) {
+    var ava = document.getElementById("avancement5");
+      if((ava.value+val)<=ava.max && (ava.value+val)>0) {
+     ava.value += val;
+      }
+      avancement5();
+}
+</script>
+<style>
+  button>img{width:100%;}
+  
+  button{border:solid;padding: 10px;border-width: 2px;border-radius: 5px;margin:40px;margin-left:60px;width:200px}
+  h4{
+    text-align: center;border:solid;padding: 10px;border-width: 2px;border-radius: 5px;color:black;
+  }
+  body{
+  background-image: url('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.15752-9/93866608_355731662052093_1134854492747988992_n.png?_nc_cat=108&_nc_sid=b96e70&_nc_oc=AQlCbSP6T3mw4yLqdu_CFiXdn-q4EBOtdSNqmjz4X6Y6v2AQVKBU5jhi0Ox8iUigC4IWU6lz6IJ7xRgwmcWBiWfy&_nc_ht=scontent-cdg2-1.xx&oh=74f1658aa71d6847ca92d4713bbf164c&oe=5EC55ED3');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+  color:white;
+  }
+</style>
+
 {% endblock %}
