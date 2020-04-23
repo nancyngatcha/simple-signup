@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+  <br>
+  <br>
+  <br>
+  <br>
   <head>
     <meta charset="utf-8">
     <title>{% block title %}Simple is Better Than Complex{% endblock %}</title>
   </head>
   <body>
     <header>
-      <h1>HACKATON</h1>
       {% if user.is_authenticated %}
         <a href="{% url 'logout' %}">logout</a>
       {% else %}
@@ -20,3 +23,18 @@
     </main>
   </body>
 </html>
+<style>
+  body{
+  background-image: url('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.15752-0/p280x280/94127912_668305083949085_7715279680584024064_n.png?_nc_cat=110&_nc_sid=b96e70&_nc_oc=AQmkEqqHWQTYyX5LLqUNKYFvi5bLbwcD_5FNszgRDFa8aP0so0eI4QwBw4j3Ps4JvPS7IwobO9tk0eTj1OgBaO8D&_nc_ht=scontent-cdg2-1.xx&oh=d4a9a7cdca808e42d5f3f237f92a3b60&oe=5EC54B58');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+  margin-left:auto;
+    margin-right:auto;
+    width:50%;
+  }
+  a{
+    text-align: center;
+  }
+    
+</style>

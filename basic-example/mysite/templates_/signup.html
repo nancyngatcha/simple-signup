@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Sign up</h2>
+  <form method="POST" action=".">
+    {% csrf_token %}
+
+    <input type="text" name="fcal" value="{{F}}" />
+      <p>
+        <input type="submit" name="fibo" value="Fibonacci" />
+      </p>
+    </form>
+
+
+  {% if cal %}
+      Ton métier est {{cal}} 
+      
+  {% endif %}
+<p>
+  {% if stats %}
+    Les autres : {{stats}} 
+  {% endif %}
+</p>
+{% endblock %}

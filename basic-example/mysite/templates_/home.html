@@ -1,17 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Bienvenue à toi, {{ user.username }}!</h2>
-  <script src="https://kit.fontawesome.com/fc2cbe58ad.js" crossorigin="anonymous"></script>
+  <h2>Bienvenue, {{ user.username }}!</h2>
   <body>
-    <div>
-      <i class="fas fa-exclamation-triangle" style="font-size:100px;color:red;"></i>
-    </div>
-    <br>
-    <br>
-    <br>
-    <h5 style="margin-block: auto;">Oublie pas de faire ton test juste avant à ce lien : <a href="https://www.16personalities.com/fr/types-de-personnalite" >16 personnalités</a></h5>
-    <br>
+      <p>Oublie pas de faire ton test juste avant à ce lien : <a href="https://www.16personalities.com/fr/types-de-personnalite" >16 personnalités</a></p>
     <h3> Rentre tes résultats ici !</h3>
     <p> &emsp;&emsp;   
       <progress id="avancement" value="50" max="100"></progress>
@@ -21,6 +13,13 @@
       <br> Extraverti &emsp; &emsp; &emsp; Introverti
       
     </p>
+    <!-- C'est la deuxième valeur -->
+<!-- qui sera initialement sélectionnée -->
+<select id="monselect">
+  <option value="valeur1">Valeur 1</option> 
+  <option value="valeur2" selected>Valeur 2</option>
+  <option value="valeur3">Valeur 3</option>
+</select>
     <p>&emsp;&emsp;  
         <progress id="avancement2" value="50" max="100"></progress>
         <span id="pourcentage2"></span>
@@ -49,36 +48,12 @@
         <input type="button"  onclick="modif5(2);" value="+">
         <br> Assertif &emsp; &emsp; &emsp; Turbulent
     </p>
-    <h2>Quels sont tes Hobbies ? </h2>
-    <div>
-      <input type="checkbox" id="scales" name="scales"
-             checked>
-      <label for="Jeux vidéos">Jeux vidéos</label>
-    </div>
-    <div>
-      <input type="checkbox" id="horns" name="horns">
-      <label for="musique">Musique</label>
-    </div>
-    <div>
-      <input type="checkbox" id="horns" name="horns">
-      <label for="Voyage">Voyage</label>
-    </div>
-    <div>
-      <input type="checkbox" id="horns" name="horns">
-      <label for="Photo">Photo</label>
-    </div>
-    <div>
-      <input type="checkbox" id="horns" name="horns">
-      <label for="Dessin">Dessin</label>
-    </div>
-    <button class="enregistrement" onclick="window.location.reload(false)" value="Rafraichir">Enregistrer</button>
     <h3>Test des personnalité</h3>
     <div>
-      <h2> Clique sur le profil qui te correspond !</h2>
         <h4>Les Analystes</h4>
-      <button class="bouton" onclick="location.href='{% url 'architecte' %}'"><img src="https://i0.wp.com/www.radio1.pf/cms/wp-content/uploads/2015/04/23.04.Elon_.musk_.Tesla_.SpaceX.PASCAL-LE-SEGRETAIN.GETTY-IMAGES-NORTH-AMERICA.AFP_.1280.640.jpg?fit=1280%2C640&ssl=1"><p>Architecte : INTJ-A /INTJ-T</p></button>
-      <button class="bouton" onclick="location.href='{% url 'logicien' %}'"><img src="https://img-0.journaldunet.com/Z7DOHlCNzV81VyksnRHAfEDzXWo=/1280x/smart/ecb94915aba54c8883649349b4df7340/ccmcms-jdn/1734742.jpg"><p>Logicien : INTP-A /INTP-T</p></button>
-      <button class="bouton" onclick="location.href='{% url 'commandant' %}'"><img src="https://cdn.profoto.com/cdn/053149e/contentassets/d39349344d004f9b8963df1551f24bf4/profoto-albert-watson-steve-jobs-pinned-image-original.jpg?width=1280&quality=75&format=jpg"><p>Commandant : ENTJ-A /ENTJ-T</p></button>
+      <button class="bouton"><img src="https://i0.wp.com/www.radio1.pf/cms/wp-content/uploads/2015/04/23.04.Elon_.musk_.Tesla_.SpaceX.PASCAL-LE-SEGRETAIN.GETTY-IMAGES-NORTH-AMERICA.AFP_.1280.640.jpg?fit=1280%2C640&ssl=1"><p>Architecte : INTJ-A /INTJ-T</p></button>
+      <button class="bouton"><img src="https://img-0.journaldunet.com/Z7DOHlCNzV81VyksnRHAfEDzXWo=/1280x/smart/ecb94915aba54c8883649349b4df7340/ccmcms-jdn/1734742.jpg"><p>Logicien : INTP-A /INTP-T</p></button>
+      <button class="bouton"><img src="https://cdn.profoto.com/cdn/053149e/contentassets/d39349344d004f9b8963df1551f24bf4/profoto-albert-watson-steve-jobs-pinned-image-original.jpg?width=1280&quality=75&format=jpg"><p>Commandant : ENTJ-A /ENTJ-T</p></button>
       <button class="bouton"><img src="https://static.hitek.fr/img/actualite/i_hanks.jpg"><p>Innovateur : ENTP-A /ENTP-T</p></button>
       <h4>Les Diplomates</h4>
       <button class="bouton"><img src="https://img.bfmtv.com/c/1256/708/bfm/577714.jpg"><p>Avocat : INFJ-A /INFJ-T</p></button>
@@ -177,28 +152,11 @@ function modif5(val) {
     text-align: center;border:solid;padding: 10px;border-width: 2px;border-radius: 5px;color:black;
   }
   body{
-  background-image: url('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.15752-0/p280x280/94127912_668305083949085_7715279680584024064_n.png?_nc_cat=110&_nc_sid=b96e70&_nc_oc=AQmkEqqHWQTYyX5LLqUNKYFvi5bLbwcD_5FNszgRDFa8aP0so0eI4QwBw4j3Ps4JvPS7IwobO9tk0eTj1OgBaO8D&_nc_ht=scontent-cdg2-1.xx&oh=d4a9a7cdca808e42d5f3f237f92a3b60&oe=5EC54B58');
+  background-image: url('https://scontent-cdg2-1.xx.fbcdn.net/v/t1.15752-9/93866608_355731662052093_1134854492747988992_n.png?_nc_cat=108&_nc_sid=b96e70&_nc_oc=AQlCbSP6T3mw4yLqdu_CFiXdn-q4EBOtdSNqmjz4X6Y6v2AQVKBU5jhi0Ox8iUigC4IWU6lz6IJ7xRgwmcWBiWfy&_nc_ht=scontent-cdg2-1.xx&oh=74f1658aa71d6847ca92d4713bbf164c&oe=5EC55ED3');
   background-repeat: no-repeat;
   background-attachment: fixed; 
   background-size: 100% 100%;
-  }
-  h2{
-    font-size:3em;color: rgb(40, 181, 185);
-    margin-left:auto;
-    margin-right:auto;
-    width:100%;
-  }
-  p{
-    color:black;
-    margin-left:auto;
-    margin-right:auto;
-    width:50%;
-  }
-  label{
-    color:black;
-    margin-left:auto;
-    margin-right:auto;
-    width:50%;
+  color:white;
   }
 </style>
 

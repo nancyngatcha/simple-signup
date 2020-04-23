@@ -10,9 +10,7 @@ def home(request):
 
 
 def signup(request):
-    
     if request.method == 'POST':
-        print("eeeeeeeeeeeeeeeeeeeeeeeeee")
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
@@ -24,3 +22,12 @@ def signup(request):
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
+
+def architecte(request):
+    return render(request,'architecte.html')
+def logicien(request):
+    return render(request,'logicien.html')
+def commandant(request):
+    return render(request,'commandant.html')
+def classement(request):
+    return render(request,'classement.html')
